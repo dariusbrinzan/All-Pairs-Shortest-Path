@@ -1,0 +1,39 @@
+Homework
+-Bellman Ford, Floyd Warshall, Johnson
+
+Descrierea arhivei:
+
+* algo.h este fisierul in care se gaseste semnatura functiei shortest_path_all(...);
+* algo.cpp este fisierul in care se gaseste implementata metoda de mai sus, precum si metodele care implementeaza cei trei algoritmi. In functie de valoarea 
+parametrului algh din functia shortest_path_all(...), se va apela algoritmul corespunzator.
+* algo_test este fisierul care citeste datele de intrarea corespunzatoare unui test de la stdin, si afiseaza rezultatul la stdout.
+* Makefile
+	Acesta are urmatoarele reguli:
+		- build, care obtine fisierul obiect algo.h
+		- build_best, care compileaza executabilul care va testa unul din algoritmi pe un singur test de output
+		- clean care sterge executabilul rezultat mai sus, precum si toate fisierele obiect.
+
+	Pentru rularea unui test trebuie date urmatoarele comenzi:
+		make
+		make build_best
+		./algo_test B/F/J < input_test_file > output_file_test
+* folderul in care contine 6 teste de intrare(testele au fost create de mine, fara a utiliza un program sau ceva care sa automatizeze procesul de creare).
+* folderul out care contine testele de iesire.
+	pentru rezultatul testelor am utilizat algorimii in urmatorul fel:
+	 testul 0 si 3 folosind Bellman
+	 testul 1 si 4 folosind Floyd
+	 testul 2 si 5 folosind Johnson
+
+Fiecare test de inrare va fi structurat în felul următor:
+	pe prima linie, N (int - numărul de noduri dintr-un graf orientat), M (int - numărul de muchii);
+    M triplete: x, y, z - există o muchie de la x la y, de cost z
+
+Fiecare test de iesire va conține matricea de adiacență cu distanțele minime între noduri (A[i][j] - distanta minima de la nodul i la nodul j, 
+inf daca nu se poate ajunge de la i la j).
+algo.cpp
+algo.h
+algo_test.cpp
+in/
+Makefile
+out/
+README
